@@ -1,0 +1,73 @@
+# Authentix - Production-Grade Content Intelligence System
+
+## Phase 1: Architecture & Planning
+- [x] Define system architecture
+- [x] Create implementation plan
+- [x] Get user approval
+
+## Phase 2: Project Scaffold & Infrastructure
+- [ ] Create monorepo structure
+- [ ] Set up Docker Compose (PostgreSQL, Redis, Qdrant)
+- [ ] Configure environment files and configs
+- [ ] Set up CI/CD pipeline (GitHub Actions)
+
+## Phase 3: API Gateway (Node.js / Fastify)
+- [ ] Fastify server with JWT auth + rate limiting
+- [ ] Route definitions: /analyze, /humanize, /full-report, /upload
+- [ ] BullMQ job queue integration
+- [ ] File upload handler (multipart)
+- [ ] WebSocket / SSE for async job status
+
+## Phase 4: Document Ingestion Service (Python)
+- [ ] PDF parser (pdfplumber / pdfminer)
+- [ ] DOCX parser (python-docx)
+- [ ] Text normalizer (unicode, whitespace, section detection)
+- [ ] Structured JSON output: {metadata, sections[], paragraphs[], tokens[]}
+- [ ] Header/footer/watermark filtering
+
+## Phase 5: Plagiarism Engine (Python / FastAPI)
+- [ ] Shingling + MinHash + LSH exact matching
+- [ ] Sentence embeddings (SBERT / E5)
+- [ ] ANN search via Qdrant
+- [ ] Structural comparison (paragraph alignment)
+- [ ] Weighted hybrid score aggregation
+- [ ] Source attribution with confidence scores
+
+## Phase 6: AI Detection Engine (Python / FastAPI)
+- [ ] RoBERTa/DeBERTa fine-tuned classifier
+- [ ] Perplexity-based detector
+- [ ] Stylometric feature extractor
+- [ ] Calibrated ensemble meta-classifier
+- [ ] Explainability: perplexity, burstiness, token uniformity, syntax entropy
+
+## Phase 7: Humanization Engine (Python / FastAPI)
+- [ ] Semantic structure parser
+- [ ] Constrained rewrite pipeline (multiple candidates)
+- [ ] Candidate ranker (semantic preservation + stylometric + AI-resistance)
+- [ ] Validation firewall (entity lock, numeric fidelity, logical structure)
+- [ ] Regeneration loop until validation passes
+
+## Phase 8: Validation Engine (Python)
+- [ ] SBERT semantic similarity (≥ 0.92 threshold)
+- [ ] Named entity preservation checker (spaCy)
+- [ ] Numerical consistency check
+- [ ] Fact consistency validator
+
+## Phase 9: Frontend (Next.js)
+- [ ] Landing page with auth (sign in / sign up)
+- [ ] Dashboard: upload file or paste text
+- [ ] Results page: plagiarism report, AI score, humanized output
+- [ ] Pill badges, highlight annotations, progress states
+- [ ] Footer with "Made with love by Yaksh Bhesaniya"
+
+## Phase 10: Evaluation & Observability
+- [ ] Evaluation metrics service (AUC, calibration, precision/recall)
+- [ ] Model drift monitoring
+- [ ] False-positive tracking
+- [ ] Rewrite rejection logging
+
+## Phase 11: Deployment
+- [ ] Dockerfiles for all services
+- [ ] docker-compose.yml for local dev
+- [ ] Load testing (k6 scripts)
+- [ ] Technical documentation (README)
